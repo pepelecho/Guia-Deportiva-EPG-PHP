@@ -3,6 +3,7 @@ Esta agenda deportiva permite consultar eventos deportivos emitidos en España, 
 
 ## Sobre el proyecto
 
+
 Los datos se extraen de la guía deportiva de Movistar Plus.
 
 Con este script, podrá:
@@ -14,6 +15,12 @@ Con este script, podrá:
 5. Obtener elementos deportivos en XML para su implementación en aplicaciones web.
 
 Este código es compatible con la mayoría de reproductores IPTV (puede requerir decodificación por hardware) y ha sido probado mayoritariamente en Tivimate.
+
+<div style="display: flex;">
+  <img alt="Screenshot_2024.06.02_21.41.42.490.png" src="https://github.com/pepelecho/Guia-Deportiva-EPG-PHP/blob/main/Screenshot_2024.06.02_21.41.42.490.png?raw=true" style="max-width: 50%; height: auto; margin-right: 10px;">
+  <img alt="Screenshot_2024.06.02_21.44.50.713.png" src="https://github.com/pepelecho/Guia-Deportiva-EPG-PHP/blob/main/Screenshot_2024.06.02_21.44.50.713.png?raw=true" style="max-width: 50%; height: auto;">
+</div>
+
 
 ### Desarrollado en
 
