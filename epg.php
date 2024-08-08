@@ -73,7 +73,7 @@ if (empty($evFiltrados)) {
     $programme2->addAttribute('stop', $fecha_mañana_formato . "000000 " . $offsetFormatted);
     $programme2->addAttribute('channel', 'Guiadeportiva.tv');
     $programme2->addChild('title', "$titulo");
-    $programme2->addChild('desc', $descripcion1);
+    $programme2->addChild('desc', htmlspecialchars($descripcion1));
 
     // Añadir el programa de mañana al XML
     $programme2 = $xml2->addChild('programme');
@@ -81,7 +81,7 @@ if (empty($evFiltrados)) {
     $programme2->addAttribute('stop', $fecha_pasado_formato . "000000 " . $offsetFormatted);
     $programme2->addAttribute('channel', 'Guiadeportiva.tv');
     $programme2->addChild('title', "$titulo");
-    $programme2->addChild('desc', $descripcion2);
+    $programme2->addChild('desc', htmlspecialchars($descripcion2));
 
     // Mostrar el XML en el navegador
     header('Content-Type: text/xml');
@@ -102,6 +102,12 @@ $epg = RellenarHuecos($evFusionados);
 if (ENDEBUG) {
     echo "<br><br><br><h1>TIME LINE FINAL</h1><br>";
     debug($epg);
+
+    echo "<br><br><br><h1>DESCRIPCIONED</h1><br>";
+    echo GenerarDescripcion($RepoEventos->datos, 1, 3, $determinardeportes)."<br><br><br>";
+    echo GenerarDescripcion($RepoEventos->datos, 2, 4, $determinardeportes)."<br><br><br>";
+    echo GenerarDescripcion($RepoEventos->datos, 3, 5, $determinardeportes)."<br><br><br>";
+    echo GenerarDescripcion($RepoEventos->datos, 4, 6, $determinardeportes)."<br><br><br>";
 }
 
 // 4. Mostrar el XML
@@ -499,7 +505,7 @@ function GenerarDescripcion($eventos, $inicioDia, $finDia, $determinardeportes) 
                 $descripcion = $descripcion4;
             }
         
-            $programme->addChild('desc', $descripcion);
+            $programme->addChild('desc', htmlspecialchars($descripcion));
 
         }
     
@@ -541,4 +547,5 @@ function GenerarDescripcion($eventos, $inicioDia, $finDia, $determinardeportes) 
     
         return $meses[$numero];
     }
+
 
