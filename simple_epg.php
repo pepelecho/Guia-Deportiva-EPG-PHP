@@ -49,7 +49,7 @@ $RepoEventos = new libEventos();
     $channel2->addAttribute('lang', 'es');
     $channel2->addAttribute('id', 'Guiadeportiva.tv');
     $channel2->addChild('display-name', 'Guía deportiva');
-    $channel2->addChild('icon')->addAttribute('src', 'http://192.168.86.213:12345/icons%2Fmultideporte.png');
+    $channel2->addChild('icon')->addAttribute('src', 'icons/multideporte.png');
 
     // Añadir el programa de hoy al XML
     $programme2 = $xml2->addChild('programme');
@@ -57,7 +57,7 @@ $RepoEventos = new libEventos();
     $programme2->addAttribute('stop', $fecha_mañana_formato . "000000 " . $offsetFormatted);
     $programme2->addAttribute('channel', 'Guiadeportiva.tv');
     $programme2->addChild('title', $titulo);
-    $programme2->addChild('desc', $descripcion1);
+    $programme2->addChild('desc', htmlspecialchars($descripcion1));
 
     // Añadir el programa de mañana al XML
     $programme2 = $xml2->addChild('programme');
@@ -65,7 +65,7 @@ $RepoEventos = new libEventos();
     $programme2->addAttribute('stop', $fecha_pasado_formato . "000000 " . $offsetFormatted);
     $programme2->addAttribute('channel', 'Guiadeportiva.tv');
     $programme2->addChild('title', $titulo);
-    $programme2->addChild('desc', $descripcion2);
+    $programme2->addChild('desc', htmlspecialchars($descripcion2));
 
     // Añadir el programa de pasado mañana al XML
     $programme2 = $xml2->addChild('programme');
@@ -73,7 +73,7 @@ $RepoEventos = new libEventos();
     $programme2->addAttribute('stop', $fecha_pasado_pasado_formato . "000000 " . $offsetFormatted);
     $programme2->addAttribute('channel', 'Guiadeportiva.tv');
     $programme2->addChild('title', $titulo);
-    $programme2->addChild('desc', $descripcion3);
+    $programme2->addChild('desc', htmlspecialchars($descripcion3));
 
     // Mostrar el XML en el navegador
     header('Content-Type: text/xml');
