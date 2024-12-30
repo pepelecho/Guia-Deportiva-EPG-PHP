@@ -1,6 +1,6 @@
 <?php
 
-define("ENDEBUG", TRUE);
+define("ENDEBUG", FALSE);
 require("includes/LibEventos.php");
 require ("includes/config.php");
 $RepoEventos = new libEventos();
